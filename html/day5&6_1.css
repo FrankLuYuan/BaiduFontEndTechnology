@@ -1,0 +1,68 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.container{
+    width: 800px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 0.1px solid gray;
+    background-color: gainsboro;
+    box-shadow: 10px 10px 5px gray;
+}
+
+
+h1,h2{
+    margin-left: 10px;
+}
+
+/* >代表：所有符合的子(儿子)元素（非所有后代元素） */
+.info .info-content > .info-item{
+    /* border: 1px solid black; */
+    margin-right: 30px;
+}
+
+.info-content{
+    margin-left: 50px;
+}
+
+/* info下的span偶数索引的（nth-child和一般想的不同） */
+.info span:nth-child(odd){
+    font-weight: bold;
+}
+
+.contact .contact-content > .contact-item{
+    margin-right: 30px;
+}
+
+.contact-content{
+    margin-left: 50px;
+}
+
+.contact span:nth-child(odd){
+    font-weight: bold;
+}
+
+.ability .ability-item{
+    margin-left: 50px;
+}
+
+.edu .edu-item{
+    margin-left: 50px;
+}
+
+.proexp .proexp-item{
+    margin-left: 50px;
+}
+
+.proexp .proexp-item p::first-letter{
+    font-size: 20px;
+    color: brown;
+}
+
+
+.footer{
+    text-align: center;
+}
