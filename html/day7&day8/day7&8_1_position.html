@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第七天到第八天：学习布局（position实现两栏布局）</title>
+
+    <style type="text/css">
+        body{
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+        }
+        
+        .container > div:nth-child(1){
+            width: 30%;
+            height: 600px;
+            border: 1px solid red;
+            
+            text-align: center;
+            line-height: 600px;
+        }
+        
+        .container > div:nth-child(2){
+            width: 69%;
+            height: 600px;
+            border: 2px solid black;
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            
+            text-align: center;
+            line-height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>sidebar-left</div>
+        <div>sidebar-right</div>
+    </div>
+</body>
+</html>

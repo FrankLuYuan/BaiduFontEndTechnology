@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化（flex）</title>
+
+    <style type="text/css">
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .container{
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        
+        .container > div:nth-child(1){
+            width: 30%;
+            height: 600px;
+            border: 1px solid red;
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 100px;
+            
+            text-align: center;
+            line-height: 600px;
+        }
+        
+        .container > div:nth-child(2){
+            width: 69%;
+            height: 600px;
+            border: 2px solid black;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: auto;
+            
+            text-align: center;
+            line-height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>sidebar-left</div>
+        <div>sidebar-right</div>
+    </div>
+</body>
+
+</html>
