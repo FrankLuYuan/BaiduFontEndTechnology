@@ -1,0 +1,367 @@
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.sec1{
+    position: relative;
+}
+
+.sec1>div>img{
+    width: 100%;
+    filter: brightness(0.5);
+}
+
+.sec1>div:nth-child(2){
+    position: absolute;
+    top: 40px;
+    width: 100%;
+}
+
+.sec1>div>p:nth-child(1){
+    font-size: 60px;
+    text-align: center;
+    color: white;
+}
+
+.sec1>div>p:nth-child(2){
+    text-align: center;
+    width: 960px;
+    margin: auto;
+    color: gainsboro;
+}
+
+.sec1>div:nth-child(2)>div{
+    border: 0.1px solid gray;
+    width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.sec1>div:nth-child(2)>div>p:nth-child(1){
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
+
+.sec1>div:nth-child(2)>div>p:nth-child(2){
+    text-align: center;
+    color: gainsboro;
+}
+
+.sec1>div:nth-child(2)>div>form{
+    text-align: center;
+}
+
+.sec1>div:nth-child(2)>div>form>input:nth-child(3){
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 36px;
+    border-radius: 5px;
+}
+
+.sec1>div:nth-child(2)>div>form>input:nth-child(2){
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    outline-style: none;
+    text-indent: 1em;
+}
+
+.sec1>div:nth-child(2)>div>form>input:nth-child(1){
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    outline-style: none;
+    text-indent: 1em;
+}
+
+.sec2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border:1px solid red; */
+    width: 960px;
+    margin: auto;
+}
+
+.sec2>div:nth-child(1){
+    margin-top: 30px;
+    width: 100%;
+    height: 180px;
+    flex: 1 1 auto;
+    text-align: center;
+}
+.sec2>div:nth-child(1) p{
+    font-size: 30px;
+    width: 450px;
+    margin: auto;
+}
+
+.sec2>div:not(.summary1){
+    flex: 1 1 50%;
+    height: 120px;
+}
+
+.sec2>div>img{
+    float: left;
+}
+
+.sec2>div>div{
+    margin-left: 60px;
+    margin-top: -20px;
+}
+
+.sec3{
+    position: relative;
+}
+
+.sec3>div>img{
+    width: 100%;
+    filter: brightness(50%);
+}
+
+.sec3>div:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+}
+
+.sec3>div:nth-child(2)>div:nth-child(1){
+    flex: 0 0 30%;
+    margin: auto;
+}
+
+.sec3>div:nth-child(2)>div:nth-child(1){
+    flex: 0 0 40%;
+    margin-left: auto;
+}
+
+.sec3>div:nth-child(2)>div>p:nth-child(1){
+    font-size: 40px;
+    color: white;
+}
+
+.sec3>div:nth-child(2)>div>p:nth-child(2){
+    color: gainsboro;
+}
+
+.sec3>div:nth-child(2)>div>button:nth-child(3){
+    background-color: white;
+    color: black;
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.sec3>div:nth-child(2)>div>button:nth-child(4){
+    background-color: transparent;
+    color: white;
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.sec3>div:nth-child(2)>div>img{
+    width: 500px;
+    border: 1px solid gray;
+    padding: 30px;
+    padding-left: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.sec4{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 960px;
+    margin: auto;
+}
+
+.sec4>div:nth-child(1){
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 60px;
+}
+
+.sec4>div:not(.summary4){
+    flex: 1 1 30%;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 60px;
+}
+
+.sec5{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 960px;
+    margin: auto;
+    /* border:1px solid red; */
+    align-items: center;
+}
+
+.sec5>div{
+    flex: 1 1 30%;
+    /* border:1px solid red; */
+    padding: 20px;
+}
+
+.sec6>div:nth-child(1){
+    width: 960px;
+    text-align: center;
+    /* margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px; */
+    margin: 50px auto;
+}
+
+.sec6>div:nth-child(1)>p{
+    width: 500px;
+    margin: auto;
+}
+
+.sec6>div:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 960px;
+    margin: auto;
+}
+
+.sec6>div:nth-child(2)>div img{
+    width: 450px;
+    height: 350px; 
+}
+
+.sec6>div:nth-child(2)>div img:hover{
+    filter: brightness(60%);
+}
+
+/* 设置兄弟元素（.hideshow）可见 */
+.sec6>div:nth-child(2)>div img:hover + div{
+    opacity: 1;
+}
+
+.sec6>div:nth-child(2)>div{
+    flex: 1 1 auto;
+    margin: 10px;
+    position: relative;
+}
+
+.hideshow{
+    opacity: 0;
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    font-size: 35px;
+}
+.hideshow:hover{
+    opacity: 1;
+}
+
+/* .hideshow:hover + img{
+    filter: brightness(60%);
+} */
+
+.sec7{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.sec7>div:nth-child(1){
+    flex: 0 0 30%;
+    border: 0.4px solid gray;
+    border-radius: 10px;
+    margin: auto;
+    margin-right: 80px;
+    padding: 20px;
+    height: 400px;
+    text-align: center;
+}
+
+.sec7>div:nth-child(1)>p{
+    text-align: center;
+}
+
+.sec7>div:nth-child(1) input:nth-child(1){
+    width: 250px;
+    height: 25px;
+    margin-top: 20px;
+}
+
+.sec7>div:nth-child(1) input:nth-child(2){
+    width: 250px;
+    height: 25px;
+    margin-top: 20px;
+}
+
+.sec7>div:nth-child(1) input:nth-child(3){
+    width: 250px;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.sec7>div:nth-child(1) input:nth-child(4){
+    margin-top: 30px;
+    width: 250px;
+    height: 30px;
+    background-color: black;
+    color: white;
+}
+
+.sec7>div:nth-child(2){
+    flex: 0 0 20%;
+    margin: auto;
+    margin-left: 80px;
+}
+
+.sec7>div:nth-child(2)>p:nth-child(1){
+    font-size: 35px;
+}
+
+.sec7>div:nth-child(2)>p:nth-child(3){
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.sec7>div:nth-child(2)>p:nth-child(4){
+    font-weight: bold;
+}
+
+.sec7>div:nth-child(2)>p:nth-child(5){
+    font-weight: bold;
+}
+
+
+footer{
+    background-color: black;
+}
+
+footer > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 960px;
+    margin: auto;
+    padding-top: 40px;
+    color: white;
+}
+
+footer > div > div{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 20%;
+    text-align: center;
+    margin: 20px;
+}
