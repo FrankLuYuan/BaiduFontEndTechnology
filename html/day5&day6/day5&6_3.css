@@ -1,0 +1,124 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.container{
+    width: 1000px;
+    height: 820px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 0.1px solid transparent;
+    background-color: gainsboro;
+    box-shadow: 30px 30px 5px gray;
+}
+
+
+h1{
+    margin-left: 10px;
+}
+
+
+.sidebar{
+    background-color: cadetblue;
+    border: 1px solid transparent;
+}
+
+.sidebar p{
+}
+
+.info{
+    height: 60px;
+}
+.info .h2{
+    float: left;
+    background-color: bisque;
+}
+
+/* >代表：所有符合的子(儿子)元素（非所有后代元素） */
+.info .info-content > .info-item{
+    /* border: 1px solid black; */
+    margin-right: 30px;
+}
+
+.info-content{
+    margin-left: 120px;
+}
+
+/* info下的span偶数索引的（nth-child和一般想的不同） */
+.info span:nth-child(odd){
+    font-weight: bold;
+    line-height: 70px;
+}
+
+.contact{
+    height: 80px;
+}
+.contact .h2{
+    float: left;
+    height: 80px;
+    background-color: bisque;
+}
+
+.contact .contact-content > .contact-item{
+    margin-right: 10px;
+    line-height: 70px;
+}
+
+.contact-content{
+    margin-left: 120px;
+}
+
+.contact span:nth-child(odd){
+    font-weight: bold;
+}
+
+.ability{
+    height: 150px;
+}
+.ability .h2{
+    float: left;
+    background-color: bisque;
+    height: 150px;
+}
+
+.ability .ability-item{
+    margin-left: 120px;
+}
+
+.edu {
+    height: 150px;
+}
+.edu .h2{
+    float: left;
+    background-color: bisque;
+    height: 150px;
+}
+
+.edu .edu-item{
+    margin-left: 120px;
+}
+
+.proexp{
+    height: 140px;
+}
+.proexp .h2{
+    float: left;
+    background-color: bisque;
+    height: 140px;
+}
+
+.proexp .proexp-item{
+    margin-left: 120px;
+}
+
+.proexp .proexp-item p::first-letter{
+    font-size: 20px;
+    color: brown;
+}
+
+
+.footer{
+    text-align: center;
+}
