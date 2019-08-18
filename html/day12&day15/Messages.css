@@ -1,0 +1,427 @@
+
+body,html{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/* 最左侧栏 */
+main>section:nth-child(1){
+    background-color: #1d2531;
+    flex: 0 0 80px;
+}
+
+main>section:nth-child(1)>div{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main>section:nth-child(1)>div>div:nth-child(1){
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+main>section:nth-child(1)>div>div:nth-child(1) img{
+    margin-top: 10px;
+}
+
+main>section:nth-child(1)>div>div:nth-child(2){
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: auto;
+}
+
+main>section:nth-child(1)>div>div:nth-child(2) img{
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+/* 中间栏 */
+main>section:nth-child(2){
+    background-color: rgb(34, 44, 60);
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1){
+    width: 240px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(1){
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(1) span{
+    flex: 0 0 80%;
+    color: gray;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(1) img{
+    flex: 0 0 auto;
+    margin: auto;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(2){
+    /* flex: ; */
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div{
+    /* flex: ; */
+    margin-top: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(2)>div>div:nth-child(2).overview-count{
+    /* flex: ; */
+    /* border: 1px solid red; */
+    flex:0 0 15%;
+    background-color: rgb(25,145,235) ;
+    margin: auto;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(2) span{
+    flex:0 0 80%;
+    color: white;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(3) span{
+    flex: 0 0 80%;
+    color: gray;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(3){
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(3) img{
+    flex: 0 0 auto;
+    margin: auto;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(4){
+    /* flex: ; */
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(4) img{
+    margin-top: 5px;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(4) span{
+    flex: 0 0 80%;
+    margin: auto;
+    margin-left: 10px;
+    margin-top: 5px;
+    color: white;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(5){
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(5) span{
+    flex: 0 0 80%;
+    color: gray;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(5) img{
+    flex: 0 0 auto;
+    margin: auto;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(6){
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(6) span{
+    flex: 0 0 80%;
+    color: white;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(6)>div{
+    margin-top: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div:nth-child(6)>div>div:nth-child(2).attention-tips{
+    flex: 0 0 8%;
+    margin: auto;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: red;
+    text-align: center;
+}
+
+main>section:nth-child(2)>div:nth-child(1)>div{
+    /* flex: ; */
+    margin: 10px;
+}
+
+main>section:nth-child(2)>div:nth-child(2){
+    flex: 0 0 auto;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: 10px;
+    color: white;
+}
+
+main>section:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+    text-align: center;
+}
+
+main>section:nth-child(2)>div:nth-child(2)>div:nth-child(2){
+    margin-top: 10px;
+    height: 2px;
+    width: 98%;
+    background-color: gray;
+}
+
+main>section:nth-child(2)>div:nth-child(2)>div>div{
+    margin-left: 0px;
+    height: 2px;
+    width: 90%;
+    background-color: purple;
+}
+
+/* 右侧栏 */
+main>section:nth-child(3){
+    height: 100%;
+    flex: 1 0 0;
+    background-color: gainsboro;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* 右侧栏 的上侧栏 */
+main>section:nth-child(3)>section:nth-child(1){
+    /* border: 1px solid red; */
+}
+main>section:nth-child(3)>section:nth-child(1)>div{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+    align-items: center;
+}
+
+main>section:nth-child(3)>section:nth-child(1)>div span{
+    flex: 0 0 auto;
+    font-size: 30px;
+}
+
+main>section:nth-child(3)>section:nth-child(1)>div>div:nth-child(2){
+    margin-left: 10px;
+    margin-right: auto;
+    width: 8px;
+    height: 8px;
+    background-color: green;
+    border-radius: 50px;
+}
+
+main>section:nth-child(3)>section:nth-child(1)>div>div:nth-child(3){
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+main>section:nth-child(3)>section:nth-child(1)>div>div>div p{
+    margin: auto;
+    margin-left: 10px;
+}
+
+/* 右侧栏 的左右栏 */
+main>section:nth-child(3)>section:nth-child(2){
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/* 右侧栏 的左下栏 */
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1){
+    flex: 0 0 30%;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div{
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    margin-left: 10px;
+    padding: 10px;
+    position: relative;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div input{
+    border-radius: 50px;
+    width: 95%;
+    height: 30px;
+    outline-style: none;
+    text-indent: 1em;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div i{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div:not(.search){
+    display: flex;
+    flex-flow: row wrap;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div:not(.search)>div:nth-child(1){
+    flex: 0 0 20%;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div:not(.search)>div:nth-child(2){
+    flex: 1 0 0;
+    /* color: red; */
+    display: flex;
+    flex-flow: row wrap;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div:not(.search)>div:nth-child(2) span:nth-child(1){
+    flex: 1 0 80%;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div:not(.search)>div:nth-child(2) span:nth-child(2){
+    flex: 1 0 auto;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div:not(.search)>div:nth-child(3){
+    flex: 0 0 100%;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(1) > div:not(.search)>div:nth-child(3) p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/* 右侧栏 的右下栏 */
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2){
+    flex: 0 0 67%;
+}
+
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div:nth-child(1){
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div>div:nth-child(1){
+    flex: 1 0 auto;
+    margin-right: auto;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div>div:nth-child(2){
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div>div:nth-child(2) i{
+    flex: 0 0 auto;
+    padding: 9px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div>div:nth-child(2) i:nth-child(1){
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div>div:nth-child(2) i:nth-child(2){
+    border-left: none;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div>div:nth-child(2) i:nth-child(3){
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-right: 10px;
+    border-left: none;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div>div:nth-child(2) i:nth-child(5){
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: 10px;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div>div:nth-child(2) i:nth-child(6){
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: none;
+}
+
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div:nth-child(2){
+    display: flex;
+    flex-flow: column nowrap;
+    /* color: red; */
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>div{
+    flex: 1 0 auto;
+    margin:10px; 
+    display: flex;
+    flex-flow: row nowrap;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>div>div:nth-child(2){
+    margin-left: 20px;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>div>div:nth-child(3){
+    
+}
+
+.division-line{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.line{
+    flex:1 0 auto;
+    height: 1px;
+    background-color: black;
+    /* color: black; */
+}
+
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>div:last-child{
+    position: relative;
+    flex: 1 0 auto;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>div:last-child input{
+    border-radius: 10px; 
+    height: 30px;
+    width: 100%;
+    outline-style: none;
+    text-indent: 3em;
+}
+main>section:nth-child(3)>section:nth-child(2)>section:nth-child(2)>div:nth-child(2)>div:last-child i{
+    position: absolute;
+    top: -1.5px;
+    font-size: 39px;
+    cursor: pointer;
+}
