@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习6</title>
+
+    <style type="text/css">
+        body>div>div {
+            width: 480px;
+            height: 480px;
+            border: 0.5px dotted gray;
+            box-shadow: 10px 10px 3px gray;
+            border-radius: 50%;
+            margin: 50px auto;
+            background-image: url("erik.jpg");
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="csssprite-div">
+        </div>
+        <button id="csssprite-btn" name="csssprite-btn">微笑</button>
+    </div>
+    <script type="text/javascript">
+        // 学习来实现一个帧动画：
+        // 基于一个我们提供的图片，实现 IFE2016中Erik笑容的动画
+        // 图片地址：http://ife.baidu.com/2016/static/img/erik_ce204002.jpg
+        // 注意，依然不要使用 CSS animation，因为我们这里要学习的是使用 JavaScript 来操作 CSS，而不是为了完成这个任务。
+
+        window.onload = function () {
+            var cssSpriteBtn = document.getElementById("csssprite-btn");
+            var cssSpriteDiv = document.getElementById("csssprite-div");
+            var isLook = true;
+            cssSpriteBtn.onclick = function () {
+                var count = 0;//最多17次  图片宽高480px 480px
+                var x, y = 0;
+                var interval = setInterval(function () {
+                    if (isLook) {
+                        count = count + 1;
+                        x = 0;
+                        y = -(count * 480);
+                        cssSpriteDiv.style.backgroundPosition = x + "px " + y + "px";
+                        if (count == 16) {
+                            // clearInterval(interval);
+                            // cssSpriteDiv.style.backgroundPosition = 0 + "px " + 0 + "px";
+                            isLook = false;
+                        }
+                    }
+                    else {
+                        count = count - 1;
+                        x = 0;
+                        y = -(count * 480);
+                        cssSpriteDiv.style.backgroundPosition = x + "px " + y + "px";
+                        if (count == 0) {
+                            // clearInterval(interval);
+                            // cssSpriteDiv.style.backgroundPosition = 0 + "px " + 0 + "px";
+                            isLook = true;
+                        }
+                    }
+                }, 100);
+            };
+        }
+    </script>
+</body>
+
+</html>

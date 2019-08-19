@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习5</title>
+
+    <style type="text/css">
+        /* * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #mainbody {
+            position: relative;
+            width: 100px;
+            height: 150px;
+            border: solid 2px #fff;
+            padding: 2px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: block;
+            height: 25px;
+            line-height: 25px;
+            overflow: hidden;
+            margin: 5px;
+            border-bottom: 3px solid #dedede
+        }
+
+        h3 {
+            font-weight: 100;
+            font-size: 14px;
+            text-indent: 10px;
+        }
+
+        li i {
+            background: url(00.png) no-repeat;
+            display: inline;
+            width: 25px;
+            height: 25px;
+            float: left;
+        }
+
+        .sp-1 i {
+            background-position: 0px 0px;
+        }
+
+        .sp-2 i {
+            background-position: -26px 0px;
+        }
+
+        .sp-3 i {
+            background-position: -26px -27px;
+        }
+
+        .sp-4 i {
+            background-position: 0px -27px;
+        } */
+
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        ul>li {
+            /* border: 0.1px solid red; */
+            margin: 5px;
+            padding: 10px;
+            width: 100px;
+            border-bottom: 2px solid gray;
+        }
+
+        ul>li>i {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            float: left;
+            background-image: url("00.png");
+            background-repeat: no-repeat;
+        }
+
+        ul>li>i:hover {
+            cursor: pointer;
+        }
+
+        ul>li>h3 {
+            text-indent: 10px;
+        }
+
+        ul>li.sp-1>i {
+            background-position: 0px 0px;
+        }
+
+        ul>li.sp-2>i {
+            background-position: -25px 0px;
+        }
+
+        ul>li.sp-3>i {
+            background-position: 0px -25px;
+        }
+
+        ul>li.sp-4>i {
+            background-position: -25px -25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainbody">
+        <ul>
+            <li class="sp-1">
+                <i></i>
+                <h3>主页</h3>
+            </li>
+            <li class="sp-2">
+                <i></i>
+                <h3>空间</h3>
+            </li>
+            <li class="sp-3">
+                <i></i>
+                <h3>网络</h3>
+            </li>
+            <li class="sp-4">
+                <i></i>
+                <h3>其他</h3>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+ 
+
+    </script>
+</body>
+
+</html>

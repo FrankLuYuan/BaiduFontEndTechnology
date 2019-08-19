@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习4</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+    <button id="fade-btn">淡出</button>
+
+    <script type="text/javascript">
+
+        // 针对以上 HTML，分别使用 setTimeout 和 setInterval 实现以下功能：
+
+        // 点击按钮时，开始改变 fade - obj 的透明度，开始一个淡出（逐渐消失）动画，直到透明度为0
+        // 在动画过程中，按钮的状态变为不可点击
+        // 在动画结束后，按钮状态恢复，且文字变成“淡入”
+        // 在 按钮显示 淡入 的状态时，点击按钮，开始一个“淡入”（逐渐出现）的动画，和上面类似按钮不可点，直到透明度完全不透明
+        // 淡入动画结束后，按钮文字变为“淡出”
+        // 暂时不要使用 CSS animation （以后我们再学习）
+
+        window.onload = function () {
+            var fadeBtn = document.getElementById("fade-btn");
+            var fadeObj = document.getElementById("fade-obj");
+
+            fadeBtn.onclick = function () {
+                if (fadeBtn.innerHTML == "淡出") {
+                    var opacity = 1;
+                    fadeBtn.setAttribute("disabled", "true");
+                    var interval = setInterval(
+                        function () {
+                            //同比扩大成整数相减再同比缩小
+                            opacity = (opacity * 10 - 1) / 10;
+                            fadeObj.style.opacity = opacity;
+                            if (opacity == 0) {
+                                clearInterval(interval);
+                                fadeBtn.removeAttribute("disabled");
+                                fadeBtn.innerHTML = "淡入";
+                            }
+                        }, 50);
+                }
+                else {
+                    var opacity = 0;
+                    fadeBtn.setAttribute("disabled", "true");
+                    var interval = setInterval(
+                        function () {
+                            //同比扩大成整数相减再同比缩小
+                            opacity = (opacity * 10 + 1) / 10;
+                            fadeObj.style.opacity = opacity;
+                            if (opacity == 1) {
+                                clearInterval(interval);
+                                fadeBtn.removeAttribute("disabled");
+                                fadeBtn.innerHTML = "淡出";
+                            }
+                        }, 50);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

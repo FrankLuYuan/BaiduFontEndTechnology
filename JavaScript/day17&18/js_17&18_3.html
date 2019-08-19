@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小练习，练习使用循环实现一个九九乘法表</title>
+
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid gray;
+            border-color: red;
+            text-align: center;
+        }
+
+        td,
+        th {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="trans-btn">九九乘法表</button>
+    <p id="result"></p>
+    <button id="trans-btn1">九九乘法表</button>
+    <p id="result1"></p>
+
+
+    <script type="text/javascript">
+
+        // 第一步，最低要求：在Console中按行输出 n * m = t
+        // 然后，尝试在网页中，使用table来实现一个九九乘法表
+
+        document.getElementById("trans-btn").onclick = function () {
+            var result = document.getElementById("result");
+
+            for (var i = 1; i <= 9; i++) {
+                for (var j = 1; j <= i; j++) {
+                    result.innerHTML += j + "*" + i + "=" + i * j + " ";
+                }
+                result.innerHTML += "<br/>";
+            }
+
+        }
+        document.getElementById("trans-btn1").onclick = function () {
+            var res = document.getElementById("result1");
+            var text = "";
+            text += "<table>";
+            for (var i = 1; i <= 9; i++) {
+                text += "<tr>";
+                for (var j = 1; j <= 9; j++) {
+                    var temp = i + "*" + j + "=" + i * j;
+                    text += "<td>" + temp + "</td>";
+                }
+                text += "</tr>";
+            }
+            text += "</table>";
+            res.innerHTML = text;
+
+        }
+    </script>
+</body>
+
+</html>

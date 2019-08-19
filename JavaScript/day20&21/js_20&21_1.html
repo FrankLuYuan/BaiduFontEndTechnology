@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习2</title>
+
+    <style type="text/css">
+        select {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <label>
+        <input id="school" name="status" type="radio">
+        School
+    </label>
+    <label>
+        <input id="company" name="status" type="radio">
+        Company
+    </label>
+    <!-- <input id="haha" type="radio" value="haha" name="gagaga" /><label for="haha">男</label> -->
+
+    <select id="school-select">
+        <option>北京邮电大学</option>
+        <option>黑龙江大学</option>
+        <option>华中科技大学</option>
+    </select>
+
+    <select id="company-select">
+        <option>百度</option>
+        <option>爱奇艺</option>
+    </select>
+
+    <script type="text/javascript">
+
+        // 当用户选择了 School 的单选框时，显示 School 的下拉选项，隐藏 Company 的下拉选项
+        // 当用户选择了 School 的单选框时，显示 Company 的下拉选项，隐藏 School 的下拉选项
+
+        window.onload = function(){
+            var school = document.getElementById("school");
+            var company = document.getElementById("company");
+            var schoolSelect = document.getElementById("school-select");
+            var companySelect = document.getElementById("company-select");
+
+            school.onclick = function(){
+                schoolSelect.style.display = "block";
+                companySelect.style.display = "none";
+            };
+            company.onclick = function(){
+                companySelect.style.display = "block";
+                schoolSelect.style.display = "none";
+            };
+        }
+
+    </script>
+</body>
+
+</html>

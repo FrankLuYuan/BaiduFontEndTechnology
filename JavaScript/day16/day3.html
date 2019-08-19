@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第三天：让简历有点色彩</title>
+
+    <style type="text/css">
+        body{
+            padding: 0px;
+            margin: 0px;
+            background-image: url("./bgimage.jpg");
+        }
+
+        .welcome{
+            /* display: none; */
+            width: 200px;
+            height: 100px;
+            border: 0.5px solid gray;
+            /* margin: auto; */
+            left: calc((100% - 200px)/2);
+            text-align: center;
+            line-height: 100px;
+            font-size: 15px;
+            background-color:olive;
+            box-shadow: 10px 10px 5px gray;
+            /* border-top-left-radius: 50px;
+            border-top-right-radius: 50px; */
+            opacity: 0;
+            position: absolute;
+            z-index: 1;
+            animation: myFrames 3s;
+            -webkit-animation: myFrames 3s;
+        }
+
+        @keyframes myFrames{
+            from{
+                opacity: 0;
+                top: 0px;
+                width: 200px;
+                height: 100px;
+                left: calc((100% - 200px)/2);
+                line-height: 100px;
+                font-size: 15px;
+            }
+            to{ 
+                opacity: 1;
+                top: 200px;
+                width: 450px;
+                height: 200px;
+                left: calc((100% - 450px)/2);
+                line-height: 200px;
+                font-size: 30px;
+            }
+        }
+
+        .container{
+            background-color:#d3e7f8;
+            border: 0.1px solid gray;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 800px;
+            position: absolute;
+            left: calc((100% - 800px)/2);
+            box-shadow: 20px 20px 10px gray;
+            border-radius: 5px;
+        }
+
+        h2{
+            background-color:cadetblue;
+            width: 120px;
+            transition: width 0.5s;
+            -webkit-transition: width 0.5s;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        /* .container-info:hover,.container-wanted:hover,.container-edu:hover,
+        .container-jobexp:hover,.container-proexp:hover,.container-schexp:hover,.container-certificate:hover,.container-comment:hover{
+            
+        } */
+
+        h2:hover{
+            width: 200px;
+            background-color:cornflowerblue;
+        }
+        
+        .container-hd > h1{
+            text-align: center;
+            text-shadow: 10px 10px 5px gray;
+        }
+
+        .container-info{
+            height: 140px;
+            width: 650px;
+        } 
+
+        .container-info ul{
+            list-style-type: none;
+            width: 500px;
+        }
+
+        /* :nth-child(even) */
+        .container-info ul li{
+            float: left;
+            width: 250px;
+        }
+
+        .container-info .basicinfo{
+            float: left;
+        }
+        
+        .container-info img{
+            width: 100px;
+            height: 140px;
+            position: absolute;
+            right: 60px;
+        } 
+
+        .container-wanted > p{
+            padding-left: 30px;
+        } 
+
+        .container-edu > p{
+            padding-left: 30px;
+        } 
+
+        .container-jobexp .container-jobexp-exp1 > ul{
+            padding-left: 50px;
+        }
+
+        .container-jobexp .container-jobexp-exp1 .container-jobexp-exp1-time{
+            padding-left: 30px;
+        }
+
+        .container-jobexp .container-jobexp-exp2 > ul{
+            padding-left: 50px;
+        }
+
+        .container-jobexp .container-jobexp-exp2 .container-jobexp-exp2-time{
+            padding-left: 30px;
+        } 
+
+        .container-proexp > p{
+            padding-left: 30px;
+        }
+
+        .container-proexp > ul{
+            padding-left: 50px;
+        } 
+        
+        .container-schexp > ul{
+            padding-left: 50px;
+        } 
+        
+        .container-certificate > ul{
+            padding-left: 50px;
+        }
+        
+        .container-comment{
+            height: 130px;
+        } 
+        
+        .container-comment > p{
+            padding-left: 30px;
+        }
+
+        .container h2{
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome">
+        愉快的一天，欢迎查看简历！
+    </div>
+    <div class="container">
+        <div class="container-hd">
+            <h1>个人简历</h1>
+        </div><hr/>
+        <div class="container-info">
+            <div class="basicinfo">
+                <h2>基本信息</h2>
+                <ul>
+                    <li>姓    名 ：<span>檀 棋</span></li>
+                    <li>出生年月 ：<span>1998.06</span></li>
+                    <li>性    别 ：<span>女</span></li>
+                    <li>工作经验 ：<span>0年</span></li>
+                    <li>电    话 ：<span>18888888888</span></li>
+                    <li>学&nbsp;&nbsp;&nbsp;&nbsp;历 ：<span>本科</span></li>
+                    <li>邮    箱 ：<span>13214586549@qq.com</span></li>
+                    <li>住&nbsp;&nbsp;&nbsp;&nbsp;址 ：<span>湘西</span></li>
+                </ul>
+            </div>
+            <div class="headpic">
+                <img src="./headpic.jpg" alt="lost"/>
+            </div>
+        </div><hr/>
+        <div class="container-wanted">
+            <h2>求职意向</h2>
+            <p>全职 | C#或前端软件工程师 | 10000-12000每月 | 离职</p>
+        </div><hr/>
+        <div class="container-edu">
+            <h2>教育背景</h2>
+            <p>2000.09-2000.07 | 上海戏剧学院 | 表演（本科）| 统招</p>
+        </div><hr/>
+        <div class="container-jobexp">
+            <h2>工作经验</h2>
+            <div class="container-jobexp-exp1">
+                <span class="container-jobexp-exp1-time">2000/12--2000/05</span>&nbsp;&nbsp;
+                <span class="container-jobexp-exp1-company">上海戏剧学院</span>&nbsp;&nbsp;
+                <span class="container-jobexp-exp1-job">C#软件工程师</span>
+                <ul>
+                    <li><span>新功能的开发、对用户需求进行软件修改及新功能的开发和有关winform的开发，测试及编写测试文档；</span></li>
+                    <li><span>解决公司销售、售后、客服等人员提出的bug，技术支持以及出差售后。</span></li>
+                </ul>
+            </div>
+            <div class="container-jobexp-exp2">
+                <span class="container-jobexp-exp2-time">2000/06--2000/12</span>&nbsp;&nbsp;
+                <span class="container-jobexp-exp2-company">北京电影学院</span>&nbsp;&nbsp;
+                <span class="container-jobexp-exp2-job">后端开发工程师</span>
+                <ul>
+                    <li><span>负责web前端页面的增加，前端与后端API数据的交互，部分mssqlserver数据库的编写。</span></li>
+                </ul>
+            </div>
+        </div><hr/>
+        <div class="container-proexp">
+            <h2>项目经验</h2>
+            <p>Linux系统下开发的公司管理系统、QQ聊天室等 | Linux，eclipse，gcc，vi等(未工作时)</p>
+            <ul>
+                <li>实现增、删、改、查、容器存储管理、登录退出功能、密码保护、找回密码等功能。</li>
+            </ul>
+            <p>运动控制器的开发 | 软件:VS，windowns下的编程开发</p>
+            <ul>
+                <li>控制器(机器)与软件的交互，winform界面的开发处理，利用第三方提供的库进行二次开发，实现功能如连接、下载加工、对轴的控制、对激光的控制、卡参数的读取、对图形的处理、卡版本的监控等等。</li>
+            </ul>
+            <p>餐饮管理系统和餐饮小程序 | VS，微信开发者工具，MSSQLSERVER 2008R2</p>
+            <ul>
+                <li>在餐饮管理系统中增加店铺回复语言、增加销量监控页面及其他页面、对接饿了么平台和顺丰配送等。前端与后台API及数据库数据的交互。新增小程序的菜单展示页面等(自己业余做过一个类似头条的微信小程序)。</li>
+            </ul>
+        </div><hr/>
+        <div class="container-schexp">
+            <h2>校园经历</h2>
+            <ul>
+                <li>飞思卡尔预赛 : 以智能车为研究对象的创意性科技竞赛，主要负责硬件的焊接及线路的设计，通过这次参赛积累了团队合作的经验以及了解PCB版等相关知识，学校三等奖。</li>
+                <li>校园十佳歌手、校园书法比赛等获奖。</li>
+            </ul>
+        </div><hr/>
+        <div class="container-certificate">
+            <h2>技能证书</h2>
+            <ul>
+                <li>普通话一级乙等</li>
+                <li>2000/10 嵌入式开发工程师证书</li>
+                <li>大学英语四（CET-4），良好的读写能力</li>
+                <li>全国计算机二级考试证书</li>
+            </ul>
+        </div><hr/>
+        <div class="container-comment">
+            <h2>自我评价</h2>
+            <p>热爱编程，熟悉C#，了解C++，熟悉VS，熟悉winform图形界面的开发，了解JS、css、HTML等。工作负责，连续两年获公司优秀员工。崇拜IT大牛，期待实现自我，期待两年内成为高级软件开发工程师。</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“如果”可以“重来”</title>
+</head>
+<body>
+    <input id="first-number" type="text" value="0" placeholder="第一个数字">
+    <input id="second-number" type="text" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+
+    <script type="text/javascript">
+        document.getElementById("add-btn").onclick = function(){
+            document.getElementById("result").innerHTML = parseInt(document.getElementById("first-number").value) + parseInt(document.getElementById("second-number").value);
+        }
+        document.getElementById("minus-btn").onclick = function(){
+            document.getElementById("result").innerHTML = parseInt(document.getElementById("first-number").value) - parseInt(document.getElementById("second-number").value);
+        }
+        document.getElementById("times-btn").onclick = function(){
+            document.getElementById("result").innerHTML = parseInt(document.getElementById("first-number").value) * parseInt(document.getElementById("second-number").value);
+        }
+        document.getElementById("divide-btn").onclick = function(){
+            var firstNumber = document.getElementById("first-number").value;
+            var secondNumber = document.getElementById("second-number").value;
+            if(secondNumber == "0"){
+                alert("被除数不能为0！");
+                return;
+            }
+            debugger;
+            if(isNaN(parseInt(firstNumber)) || isNaN(parseInt(secondNumber))){
+                alert("输入数字！");
+                return;
+            }
+            // alert(typeof secondNumber);
+            // console.log(parseInt(document.getElementById("first-number").value));
+            document.getElementById("result").innerHTML = parseInt(document.getElementById("first-number").value) / parseInt(document.getElementById("second-number").value);
+        }
+    </script>
+</body>
+</html>

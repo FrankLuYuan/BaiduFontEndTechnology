@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>通过除2取余的方法来把十进制整数转化为二进制</title>
+</head>
+
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+
+    <script type="text/javascript">
+
+        function dec2bin(decNumber) {
+            // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+            // debugger;
+            var result = document.getElementById("result");
+            decNumber = parseInt(decNumber)
+            var bin = "";
+            var devide = 10, remainder = 0;
+            var index = 0;
+            if(isNaN(decNumber)){
+                result.innerHTML = "必须输入数字";
+                return;
+            }
+            if(decNumber < 0){
+                result.innerHTML = "必须输入非负";
+                return;
+            }
+
+            while(devide >= 1){
+                index += 1;
+                //取整数部分
+                devide = parseInt(decNumber / 2);
+                remainder = decNumber % 2;
+                decNumber = devide;
+                bin = remainder.toString() + bin;
+                if(index % 4 == 0){
+                    bin = " " + bin;
+                }
+            }
+            result.innerHTML = bin;
+        }
+
+        // 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+        // Some coding
+        document.getElementById("trans-btn").onclick = function(){
+            var decNumber = document.getElementById("dec-number").value;
+            dec2bin(decNumber);
+        };
+    </script>
+</body>
+
+</html>

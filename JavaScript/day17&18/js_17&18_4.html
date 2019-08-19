@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>当用户访问页面的时候，根据当前时间，在页面中输出不同的问候语。</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function(){
+            var date = new Date();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            if(hour <= 7){
+                alert("早上好，当前时间" + hour + "点" + minute + "分！");
+            }
+            else if(hour >= 19){
+                alert("晚上好，当前时间" + hour + "点" + minute + "分！");
+            }
+            else{
+                alert("It's amazing！");
+            }
+        }
+    </script>
+</body>
+</html>

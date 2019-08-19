@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习1</title>
+</head>
+
+<body>
+    <input id="name" type="text">
+    <button id="submit-btn">Submit</button>
+
+    <script type="text/javascript">
+
+        // 当点击按钮 submit-btn 时，在console中输出 name 中的内容
+        // 在输入过程中，如果按回车键，则同样执行上一条的需求
+        // 在输入过程中，如果按 ESC 键，则把输入框中的内容清空
+
+        window.onload = function () {
+            var submitBtn = document.getElementById("submit-btn");
+            var name = document.getElementById("name");
+            submitBtn.onclick = function () {
+                console.log(name.value);
+            };
+            name.onkeypress = function (e) {
+                // window.event IE8 以及更早版本
+                var e = e || window.event;
+                if (e.keyCode == 13) {
+                    console.log(name.value);
+                }
+            };
+            name.onkeyup = function (e) {
+                // window.event IE8 以及更早版本
+                var e = e || window.event;
+                if (e.keyCode == 27) {
+                    name.value = "";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
