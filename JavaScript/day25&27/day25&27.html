@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习1</title>
+
+    <style type="text/css">
+        button{
+            width: 200px;
+            height: 40px;
+            border-radius: 50px;
+            outline: none;
+            display: block;
+            margin: auto;
+        }
+
+        p {
+            font-size: 30px;
+            color: rebeccapurple;
+            text-align: center;
+        }
+
+        span{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <select id="year-select"> </select>
+    <select id="month-select"></select>
+    <select id="day-select"></select>
+    <select id="hour-select"></select>
+    <select id="minite-select"></select>
+    <select id="second-select"></select>
+
+    <p id="result">显示选择时间：<span id="year-span"></span>年<span id="month-span"></span>月<span
+            id="day-span"></span>日&nbsp;&nbsp;<span id="hour-span"></span>时<span id="minite-span"></span>分<span
+            id="second-span"></span>秒</p>
+    <button id="btn-a" name="">计算时间间隔</button>
+    <p id="result-wrapper">距离系统当前时间<span id="local"></span>还有<span id="res-day"></span>天<span id="res-hour"></span>小时<span id="res-minute"></span>分<span id="res-second"></span>秒</p>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            // var result = document.getElementById("result");
+            var resultWrapper = document.getElementById("result-wrapper");
+            var btnA = document.getElementById("btn-a");
+
+            var yearSelect = document.getElementById("year-select");
+            var monthSelect = document.getElementById("month-select");
+            var daySelect = document.getElementById("day-select");
+            var hourSelect = document.getElementById("hour-select");
+            var miniteSelect = document.getElementById("minite-select");
+            var secondSelect = document.getElementById("second-select");
+
+            var yearSpan = document.getElementById("year-span");
+            var monthSpan = document.getElementById("month-span");
+            var daySpan = document.getElementById("day-span");
+            var hourSpan = document.getElementById("hour-span");
+            var miniteSpan = document.getElementById("minite-span");
+            var secondSpan = document.getElementById("second-span");
+            var local = document.getElementById("local");
+            var resDay = document.getElementById("res-day");
+            var resHour = document.getElementById("res-hour");
+            var resMinute = document.getElementById("res-minute");
+            var resSecond = document.getElementById("res-second");
+
+            //1. 初始化
+            var yearText = "", monthText = "", dayText = "", hourText = "", miniteText = "", secondText = "";
+
+            window.setInterval(function(){
+                var date = new Date();
+                local.innerHTML = date;
+            },1000);
+
+            for (let index = 2019; index < 2021; index++) {
+                yearText += "<option value='" + index + "'>" + index + "</option>";
+                yearSelect.innerHTML = yearText;
+            }
+            for (let index = 0; index <= 11; index++) {
+                monthText += "<option value='" + index + "'>" + (index + 1) + "</option>";
+                monthSelect.innerHTML = monthText;
+            }
+            var date = new Date(yearSelect.value, monthSelect.value, 0);
+            var day = date.getDate();
+            for (let index = 1; index <= day; index++) {
+                dayText += "<option value='" + index + "'>" + index + "</option>";
+                daySelect.innerHTML = dayText;
+            }
+            for (let index = 0; index < 24; index++) {
+                hourText += "<option value='" + index + "'>" + index + "</option>";
+                hourSelect.innerHTML = hourText;
+            }
+            for (let index = 0; index < 60; index++) {
+                miniteText += "<option value='" + index + "'>" + index + "</option>";
+                miniteSelect.innerHTML = miniteText;
+            }
+            for (let index = 0; index < 60; index++) {
+                secondText += "<option value='" + index + "'>" + index + "</option>";
+                secondSelect.innerHTML = secondText;
+            }
+
+            //2. onchange事件
+            yearSelect.onchange = function () {
+                //年份改变时重新获取天数
+                var date = new Date(yearSelect.value, monthSelect.value, 0);
+                var day = date.getDate();
+                // alert(day);
+                yearSpan.innerHTML = this.value;
+                //更新天数下拉框
+                daySelect.innerHTML = "";
+                var text = "";
+                for (let index = 0; index < day; index++) {
+                    text += "<option value='" + (parseInt(index) + 1) + "'>" + (parseInt(index) + 1) + "</option>";
+                }
+                daySelect.innerHTML = text;
+            }
+            monthSelect.onchange = function () {
+                //月份改变时重新获取天数
+                var date = new Date(yearSelect.value, monthSelect.value, 0);
+                var day = date.getDate();
+                // alert(day);
+                monthSpan.innerHTML =  (parseInt(this.value) + 1);
+                //更新天数下拉框
+                daySelect.innerHTML = "";
+                var text = "";
+                for (let index = 0; index < day; index++) {
+                    text += "<option value='" + (parseInt(index) + 1) + "'>" + (parseInt(index) + 1) + "</option>";
+                }
+                daySelect.innerHTML = text;
+            }
+            daySelect.onchange = function () {
+                daySpan.innerHTML = this.value;
+            }
+            hourSelect.onchange = function () {
+                hourSpan.innerHTML = this.value;
+            }
+            miniteSelect.onchange = function () {
+                miniteSpan.innerHTML = this.value;
+            }
+            secondSelect.onchange = function () {
+                secondSpan.innerHTML = this.value;
+            }
+
+            btnA.onclick = function () {
+                if (yearSpan.innerHTML == "" || monthSpan.innerHTML == "" || daySpan.innerHTML == "" || hourSpan.innerHTML == "" || miniteSpan.innerHTML == "" || secondSpan.innerHTML == "") {
+                    alert("请选择时间");
+                }
+                else{
+                    var dateStart = new Date(yearSelect.value,monthSelect.value,daySelect.value,hourSelect.value,miniteSelect.value,secondSelect.value);
+                    var dateEnd = new Date();
+                    if(dateEnd > dateStart){
+                        var time = dateEnd - dateStart;
+                        // alert(time);
+                        let day = Math.floor(time / (24 * 3600 * 1000));
+                        let leavel = time % (24 * 3600 * 1000); // 计算天数后剩余的时间
+                        let hours = Math.floor(leavel / (3600 * 1000)); // 计算剩余的小时数
+                        let leavel2 = leavel % (3600 * 1000); // 计算剩余小时后剩余的毫秒数
+                        let minutes = Math.floor(leavel2 / (60 * 1000)); // 计算剩余的分钟数
+                        let leavel3 = leavel % (60 * 1000); // 计算剩余小时后剩余的毫秒数
+                        let seconds = Math.floor(leavel3 / (1000)); // 计算剩余的秒
+                        resDay.innerHTML = day;
+                        resHour.innerHTML = hours;
+                        resMinute.innerHTML = minutes;
+                        resSecond.innerHTML = seconds;
+                    }
+                    else{
+                        //alert("HAHA");
+                        //.................
+                        var time = dateStart - dateEnd;
+                        // alert(time);
+                        let day = Math.floor(time / (24 * 3600 * 1000));
+                        let leavel = time % (24 * 3600 * 1000); // 计算天数后剩余的时间
+                        let hours = Math.floor(leavel / (3600 * 1000)); // 计算剩余的小时数
+                        let leavel2 = leavel % (3600 * 1000); // 计算剩余小时后剩余的毫秒数
+                        let minutes = Math.floor(leavel2 / (60 * 1000)); // 计算剩余的分钟数
+                        let leavel3 = leavel % (60 * 1000); // 计算剩余小时后剩余的毫秒数
+                        let seconds = Math.floor(leavel3 / (1000)); // 计算剩余的秒
+                        resDay.innerHTML = day;
+                        resHour.innerHTML = hours;
+                        resMinute.innerHTML = minutes;
+                        resSecond.innerHTML = seconds;
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
