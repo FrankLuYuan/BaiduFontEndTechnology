@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习10</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>var scoreObject = {
+            "Tony": {
+            "Math": 95,
+            "English": 79,
+            "Music": 68
+            },
+            "Simon": {
+            "Math": 100,
+            "English": 95,
+            "Music": 98
+            },
+            "Annie": {
+            "Math": 54,
+            "English": 65,
+            "Music": 88
+            }
+            }</p>
+        <p id="result"></p>
+        <button id="btn-a" name="">对象转为数组</button>
+    </div>
+    <script type="text/javascript">
+        var scoreObject = {
+            "Tony": {
+                "Math": 95,
+                "English": 79,
+                "Music": 68
+            },
+            "Simon": {
+                "Math": 100,
+                "English": 95,
+                "Music": 98
+            },
+            "Annie": {
+                "Math": 54,
+                "English": 65,
+                "Music": 88
+            }
+        }
+
+        window.onload = function () {
+            var btnA = document.getElementById("btn-a");
+            var result = document.getElementById("result");
+            btnA.onclick = function () {
+                var arr = new Array();
+                var arr1 = new Array();
+                // console.log(scoreObject);
+                // arr.forEach(
+                //     function(item,index,arr){
+                //         arr.push(item);
+                //     }
+                // );
+                for(let item in scoreObject){
+                    for(let item1 in scoreObject[item]){
+                        arr1.push(scoreObject[item][item1]);
+                    }
+                    //再arr1的前部插入item
+                    arr1.unshift(item);
+                    //将arr1数组插入arr数组
+                    arr.push(arr1);
+                    arr1 = [];
+                }
+                console.log(arr);
+                for(var i = 0; i < arr.length; i++){
+                    result.innerHTML += "[" + arr[i] + "]" + "<br />";
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

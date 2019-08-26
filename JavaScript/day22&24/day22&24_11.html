@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习12 时钟</title>
+
+    <style type="text/css">
+        p {
+            font-size: 30px;
+            color: rebeccapurple;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p id="result"></p>
+        <p id="result"></p>
+        <!-- <button id="btn-a" name=""></button> -->
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var result = document.getElementsByTagName("p");
+            // result.innerHTML = getClock();
+            getClock1();
+            getClock2();
+        }
+
+        function getClock1() {
+            setInterval(function () {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth();
+                var day = date.getDate();
+                var _date = date.getDay();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
+                result[0].innerHTML = timeFormat1(year, month, day, _date, hour, minute, second);
+                // return year + "年" + month + "月" + day + "日  " + hour + ":" + minute + ":" + second;
+            }, 500);
+        }
+
+        function timeFormat1(year, month, day, _date, hour, minute, second) {
+            var _month = parseInt(month) + 1;
+            var _day = day.toString().length == 1 ? "0" + day : day;
+            var _hour = hour.toString().length == 1 ? "0" + hour : hour;
+            var _minute = minute.toString().length == 1 ? "0" + minute : minute;
+            var _second = second.toString().length == 1 ? "0" + second : second;
+            var _hour = hour.toString().length == 1 ? "0" + hour : hour;
+            return year + "年" + _month + "月" + _day + "日  " + witchDay1(_date) + "  " + hour + ":" + _minute + ":" + _second;
+        }
+
+        function witchDay1(date) {
+            var _date = parseInt(date) == 0 ? 7 : date;
+            return "星期" + _date;
+        }
+
+        function getClock2() {
+            setInterval(function () {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth();
+                var day = date.getDate();
+                var _date = date.getDay();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
+                // 输出格式变为：2008-10-10 Monday 07:10:30 PM
+                result[1].innerHTML = timeFormat2(year, month, day, _date, hour, minute, second);
+                // return year + "年" + month + "月" + day + "日  " + hour + ":" + minute + ":" + second;
+            }, 500);
+        }
+
+        function timeFormat2(year, month, day, _date, hour, minute, second) {
+            var _month = parseInt(month) + 1;
+            var _day = day.toString().length == 1 ? "0" + day : day;
+            var _hour = hour.toString().length == 1 ? "0" + hour : hour;
+            var _minute = minute.toString().length == 1 ? "0" + minute : minute;
+            var _second = second.toString().length == 1 ? "0" + second : second;
+            var _hour = hour.toString().length == 1 ? "0" + hour : hour;
+            return year + "-" + _month + "-" + _day + "  " + witchDay2(_date) + "  " + hour + ":" + _minute + ":" + _second + "  " + checkAmPm(_hour);
+        }
+
+        function witchDay2(date) {
+            var _date = parseInt(date);
+            switch (_date) {
+                case 0:
+                    return "Sunday";
+                    break;
+                case 1:
+                    return "Monday";
+                    break;
+                case 2:
+                    return "Tuesday";
+                    break;
+                case 3:
+                    return "Wednesday";
+                    break;
+                case 4:
+                    return "Thursday";
+                    break;
+                case 5:
+                    return "Friday";
+                    break;
+                case 6:
+                    return "Saturday";
+                    break;
+
+                default:
+                    return "Noday";
+                    break;
+            }
+        }
+
+        function checkAmPm(hour){
+            var _hour = parseInt(hour);
+            if(_hour >= 12){
+                return "PM";
+            }
+            else{
+                return "AM";
+            }
+        }
+    </script>
+</body>
+
+</html>

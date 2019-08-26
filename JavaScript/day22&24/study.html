@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // let obj = {name: 'wan'};
+        // alert(obj.name);
+        // alert(obj["name"]);
+
+        let obj = {'未完成':5, '已完成':8, '待确认':4, '已取消':6};
+        // alert(obj.未完成);
+        var arr = [];
+        for(let i in obj){
+            arr.push(obj[i]); //属性
+        }
+        alert(arr);
+
+        // let obj = { '未完成': 5, '已完成': 8, '待确认': 4, '已取消': 6 };
+        // // alert(obj.未完成);
+        // var arr = [];
+        // for (let i in obj) {
+        //     var o = {};
+        //     o[i] = obj[i];
+        //     arr.push(o);
+        // }
+        // alert(arr);
+    </script>
+</body>
+
+</html>

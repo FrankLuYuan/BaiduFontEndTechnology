@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习11</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>var menuArr = [
+            [1, "Area1", -1],
+            [2, "Area2", -1],
+            [3, "Area1-1", 1],
+            [4, "Area1-2", 1],
+            [5, "Area2-1", 2],
+            [6, "Area2-2", 2],
+            [7, "Area1-2-3", 4],
+            [8, "Area2-2-1", 6],
+            ];</p>
+        <p id="result"></p>
+        <button id="btn-a" name="">数组转为对象</button>
+    </div>
+    <script type="text/javascript">
+        var menuArr = [
+            [1, "Area1", -1],
+            [2, "Area2", -1],
+            [3, "Area1-1", 1],
+            [4, "Area1-2", 1],
+            [5, "Area2-1", 2],
+            [6, "Area2-2", 2],
+            [7, "Area1-2-3", 4],
+            [8, "Area2-2-1", 6],
+        ];
+
+        window.onload = function () {
+            var btnA = document.getElementById("btn-a");
+            var result = document.getElementById("result");
+            btnA.onclick = function () {
+                var obj = {};
+                var obj1 = {};
+                for (var i = 0; i < menuArr.length; i++) {
+                    obj1 = {name:menuArr[i][1],subMenu:menuArr[i][2]};
+                    obj[i] = obj1;
+                }
+                console.log(obj);
+            };
+        }
+    </script>
+</body>
+
+</html>

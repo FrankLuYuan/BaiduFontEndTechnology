@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习9</title>
+
+    <style type="text/css">
+
+        div>button{
+            width: 300px;
+            padding: 10px;
+            border-radius: 50px;
+            outline-style: none;
+            box-shadow: 5px 5px 2px gray;
+        }
+
+        #result {
+            color: red;
+            font-weight: bold;
+            font-size: 40px;
+            margin: 20px 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];</p>
+        <button id="btn-a" type="button">从大到小</button>
+        <button id="btn-b" type="button">从小到大</button>
+        <p>var arr = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];</p>
+        <button id="btn-c" type="button">字母顺序a-z</button>
+        <button id="btn-d" type="button">字母顺序z-a</button>
+        <p>var arr = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];</p>
+        <button id="btn-e" type="button">按照每个元素中第二个数从大到小</button>
+        <p>var arr = [
+            {
+            id: 1,
+            name: 'candy',
+            value: 40
+            }, {
+            id: 2,
+            name: 'Simon',
+            value: 50
+            }, {
+            id: 3,
+            name: 'Tony',
+            value: 45
+            }, {
+            id: 4,
+            name: 'Annie',
+            value: 60
+            }
+            ];</p>
+        <button id="btn-f" type="button">按元素对象的value值从小到大</button>
+        <p id="result"></p>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var btnA = document.getElementById("btn-a");
+            var btnB = document.getElementById("btn-b");
+            var btnC = document.getElementById("btn-c");
+            var btnD = document.getElementById("btn-d");
+            var btnE = document.getElementById("btn-e");
+            var btnF = document.getElementById("btn-f");
+            var result = document.getElementById("result");
+
+            btnA.onclick = function () {
+                var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+                var arrRes = [];
+                arrRes = arr.sort(function (a, b) {
+                    return b - a;
+                });
+                result.innerHTML = arrRes;
+            };
+            btnB.onclick = function () {
+                var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+                var arrRes = [];
+                arrRes = arr.sort(function (a, b) {
+                    return a - b;
+                });
+                result.innerHTML = arrRes;
+            };
+            btnC.onclick = function () {
+                var arr = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+                var arrRes = [];
+                arrRes = arr.sort(function (a, b) {
+                    return a.charCodeAt(0) - b.charCodeAt(0);
+                });
+                result.innerHTML = arrRes;
+                // alert("a".charCodeAt(0) + "  " + "b".charCodeAt(0));
+            };
+            btnD.onclick = function () {
+                var arr = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+                var arrRes = [];
+                arrRes = arr.sort(function (a, b) {
+                    return b.charCodeAt(0) - a.charCodeAt(0);
+                });
+                result.innerHTML = arrRes;
+            };
+            btnE.onclick = function () {
+                var arr = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+                alert(arr);
+                var arrRes = [];
+                arrRes = arr.sort(function (a, b) {
+                    return b[1] - a[1];
+                });
+                result.innerHTML = arrRes;
+                // var _arr = [];
+                // for(var i = 0; i < arrRes.length; i++){
+                //     _arr.push(arrRes[i]);
+                // }
+                // result.innerHTML = _arr;
+            };
+            btnF.onclick = function () {
+                var arr = [
+                    {
+                        id: 1,
+                        name: 'candy',
+                        value: 40
+                    }, {
+                        id: 2,
+                        name: 'Simon',
+                        value: 50
+                    }, {
+                        id: 3,
+                        name: 'Tony',
+                        value: 45
+                    }, {
+                        id: 4,
+                        name: 'Annie',
+                        value: 60
+                    }
+                ];
+                var arrRes = [];
+                arrRes = arr.sort(function (a, b) {
+                    return a.value - b.value ;
+                });
+                result.innerHTML = arrRes;
+                result.innerHTML = "[";
+                for(var i = 0; i < arrRes.length; i++){
+                    result.innerHTML += "{ id: " + arrRes[i].id + ", name: " + arrRes[i].name + ", value: " + arrRes[i].value + " },";
+                }
+                var length = result.innerHTML.length;
+                result.innerHTML = result.innerHTML.substr(0,length-1) + "]";
+            };
+        }
+
+    </script>
+</body>
+
+</html>
