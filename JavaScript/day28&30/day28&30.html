@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习14</title>
+
+    <style type="text/css">
+        input {
+            width: 240px;
+            height: 30px;
+            font-size: 18px;
+            display: block;
+            margin: auto;
+            margin-top: 150px;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            width: 245px;
+            display: block;
+            margin: auto;
+        }
+
+        li {
+            border: 0.5px solid gainsboro;
+            padding: 10px 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        li:hover {
+            background-color: green;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text">
+        <ul id="email-sug-wrapper" class="email-sug"></ul>
+    </div>
+
+    <script type="text/javascript">
+        //var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+        window.onload = function () {
+            var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+            var emailInput = document.getElementById("email-input");
+            var emailSugWrapper = document.getElementById("email-sug-wrapper");
+            var emailSugLi = document.getElementsByTagName("li");
+            var text = "";
+            var curIdx = -1;
+
+            //页面加载完成后，邮件地址输入框获得焦点
+            emailInput.focus();
+
+            emailInput.oninput = function (e) {
+                text = "";
+                checkWhiteSpace(e.data);
+                checkWhiteSpace(userInput());
+                for (let index = 0, len = postfixList.length; index < len; index++) {
+                    if (userInputAfter() != "") {
+                        var inputAfter = userInputAfter();
+                        //判断数组中的值是否含有@后面的字符串
+                        if (postfixList[index].indexOf(inputAfter) != -1) {
+                            text += "<li>" + userInput() + "@" + postfixList[index] + "</li>";
+                        }
+                    }
+                    else {
+                        text += "<li>" + userInput() + "@" + postfixList[index] + "</li>";
+                    }
+                }
+                emailSugWrapper.innerHTML = text;
+
+                //更新每个li的onclick事件
+                for (let index = 0; index < emailSugLi.length; index++) {
+                    curIdx = 0;
+                    emailSugLi[0].style.backgroundColor = "green";
+                    emailSugLi[0].style.cursor = "pointer";
+                    emailSugLi[index].onclick = function () {
+                        emailInput.value = this.innerText;
+                        emailInput.focus();
+                    };
+                }
+            }
+
+            emailInput.onkeyup = function (e) {
+                //判断当前是否是隐藏状态
+                if(emailSugWrapper.style.display == "none" || emailSugWrapper.style.display == ""){
+                    return;
+                }
+                var e = e || window.event;
+                //ArrowDown
+                if (e.keyCode == 40) {
+                    if (curIdx != -1) {
+                        if (curIdx + 1 <= emailSugLi.length - 1) {
+                            emailSugLi[curIdx].style.backgroundColor = "white";
+                            emailSugLi[curIdx].style.cursor = "none";
+                            emailSugLi[curIdx + 1].style.backgroundColor = "green";
+                            emailSugLi[curIdx + 1].style.cursor = "pointer";
+                            curIdx = curIdx + 1;
+                        }
+                        else {
+                            emailSugLi[curIdx].style.backgroundColor = "white";
+                            emailSugLi[curIdx].style.cursor = "none";
+                            curIdx = 0;
+                            emailSugLi[curIdx].style.backgroundColor = "green";
+                            emailSugLi[curIdx].style.cursor = "pointer";
+                        }
+                    }
+                }
+                //ArrowUp
+                else if (e.keyCode == 38) {
+                    if (curIdx != -1) {
+                        if (curIdx == 0) {
+                            emailSugLi[curIdx].style.backgroundColor = "white";
+                            emailSugLi[curIdx].style.cursor = "none";
+                            emailSugLi[emailSugLi.length - 1].style.backgroundColor = "green";
+                            emailSugLi[emailSugLi.length - 1].style.cursor = "pointer";
+                            curIdx = emailSugLi.length - 1;
+                        }
+                        else {
+                            emailSugLi[curIdx].style.backgroundColor = "white";
+                            emailSugLi[curIdx].style.cursor = "none";
+                            curIdx = curIdx - 1;
+                            emailSugLi[curIdx].style.backgroundColor = "green";
+                            emailSugLi[curIdx].style.cursor = "pointer";
+                        }
+                    }
+                }
+                //Enter键
+                else if (e.keyCode == 13) {
+                    emailInput.value = emailSugLi[curIdx].innerText;
+                    Hide();
+                }
+                //Escape键
+                else if (e.keyCode == 27) {
+                    emailInput.select();
+                }
+            }
+
+            function userInput() {
+                var input = emailInput.value.toString().trim();
+                if (input.indexOf("@") != -1) {
+                    return emailInput.value.toString().trim().substring(0, input.indexOf("@"));
+                }
+                else {
+                    return input;
+                }
+            }
+
+            //截取@字符后的子字符串
+            function userInputAfter() {
+                var input = emailInput.value.toString().trim();
+                if (input.indexOf("@") != -1) {
+                    return input.substring(input.indexOf("@") + 1);
+                }
+                else {
+                    return "";
+                }
+            }
+
+            function checkWhiteSpace(input) {
+                if (input == " " || input == "　" || input == "") {
+                    Hide();
+                }
+                else {
+                    Show();
+                }
+            }
+
+            function Show() {
+                emailSugWrapper.style.display = "block";
+            }
+
+            function Hide() {
+                emailSugWrapper.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
