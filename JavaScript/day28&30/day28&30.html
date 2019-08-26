@@ -56,29 +56,32 @@
             var text = "";
             var curIdx = -1;
 
-            //页面加载完成后，邮件地址输入框获得焦点
+            //页面加载完成后，邮件输入框获得焦点
             emailInput.focus();
 
+            //邮件输入框的输入事件
             emailInput.oninput = function (e) {
                 text = "";
                 checkWhiteSpace(e.data);
-                checkWhiteSpace(userInput());
+                checkWhiteSpace(sliceStringBefore());
                 for (let index = 0, len = postfixList.length; index < len; index++) {
-                    if (userInputAfter() != "") {
-                        var inputAfter = userInputAfter();
-                        //判断数组中的值是否含有@后面的字符串
+                    if (sliceStringAfter() != "") {
+                        var inputAfter = sliceStringAfter();
+                        //判断数组中的值是否包含我们截取的@后面的字符串
                         if (postfixList[index].indexOf(inputAfter) != -1) {
-                            text += "<li>" + userInput() + "@" + postfixList[index] + "</li>";
+                            text += "<li>" + sliceStringBefore() + "@" + postfixList[index] + "</li>";
                         }
                     }
+                    //如果不包含@，就全部显示
                     else {
-                        text += "<li>" + userInput() + "@" + postfixList[index] + "</li>";
+                        text += "<li>" + sliceStringBefore() + "@" + postfixList[index] + "</li>";
                     }
                 }
                 emailSugWrapper.innerHTML = text;
 
                 //更新每个li的onclick事件
                 for (let index = 0; index < emailSugLi.length; index++) {
+                    //设置索引为0，默认选中第一个，设置样式
                     curIdx = 0;
                     emailSugLi[0].style.backgroundColor = "green";
                     emailSugLi[0].style.cursor = "pointer";
@@ -108,9 +111,9 @@
                         else {
                             emailSugLi[curIdx].style.backgroundColor = "white";
                             emailSugLi[curIdx].style.cursor = "none";
+                            emailSugLi[0].style.backgroundColor = "green";
+                            emailSugLi[0].style.cursor = "pointer";
                             curIdx = 0;
-                            emailSugLi[curIdx].style.backgroundColor = "green";
-                            emailSugLi[curIdx].style.cursor = "pointer";
                         }
                     }
                 }
@@ -127,9 +130,9 @@
                         else {
                             emailSugLi[curIdx].style.backgroundColor = "white";
                             emailSugLi[curIdx].style.cursor = "none";
+                            emailSugLi[curIdx - 1].style.backgroundColor = "green";
+                            emailSugLi[curIdx - 1].style.cursor = "pointer";
                             curIdx = curIdx - 1;
-                            emailSugLi[curIdx].style.backgroundColor = "green";
-                            emailSugLi[curIdx].style.cursor = "pointer";
                         }
                     }
                 }
@@ -144,7 +147,8 @@
                 }
             }
 
-            function userInput() {
+            //如果输入字符有@，则截取@前面的部分
+            function sliceStringBefore() {
                 var input = emailInput.value.toString().trim();
                 if (input.indexOf("@") != -1) {
                     return emailInput.value.toString().trim().substring(0, input.indexOf("@"));
@@ -154,8 +158,8 @@
                 }
             }
 
-            //截取@字符后的子字符串
-            function userInputAfter() {
+            //截取@字符后的部分
+            function sliceStringAfter() {
                 var input = emailInput.value.toString().trim();
                 if (input.indexOf("@") != -1) {
                     return input.substring(input.indexOf("@") + 1);
@@ -165,6 +169,7 @@
                 }
             }
 
+            //检查输入的单个字符，决定是否隐藏
             function checkWhiteSpace(input) {
                 if (input == " " || input == "　" || input == "") {
                     Hide();
@@ -174,10 +179,12 @@
                 }
             }
 
+            //隐藏列表
             function Show() {
                 emailSugWrapper.style.display = "block";
             }
 
+            //显示列表
             function Hide() {
                 emailSugWrapper.style.display = "none";
             }
